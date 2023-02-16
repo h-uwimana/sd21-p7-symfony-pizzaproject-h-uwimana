@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55142508-8fea-4ef5-a529-18dc4e9f6fd6" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/sopranos/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/sopranos/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/friendsofphp/proxy-manager-lts" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/web-link" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/redis-messenger" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/composer" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/doctrine-messenger" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/security-guard" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/amqp-messenger" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/notifier" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/sopranos/vendor/doctrine/common" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2Lp78yClDqx0aPPVDOzEbWtfwHa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/husimana/Documents/sopranos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55142508-8fea-4ef5-a529-18dc4e9f6fd6" name="Changes" comment="" />
+      <created>1676556015582</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676556015582</updated>
+      <workItem from="1676556016866" duration="1054000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
