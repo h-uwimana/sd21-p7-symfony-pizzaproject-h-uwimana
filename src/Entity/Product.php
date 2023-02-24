@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use App\Entity\Order;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -26,13 +27,16 @@ class Product
 
     #[ORM\ManyToOne(inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Category $category_id = null;
+    private ?Category $category = null;
 
-    #[ORM\ManyToMany(targetEntity: user::class, inversedBy: 'products')]
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'products')]
     private Collection $food_order;
 
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: Order::class)]
     private Collection $orders;
+
+    #[ORM\Column]
+    private ?float $price = null;
 
     public function __construct()
     {
@@ -143,6 +147,18 @@ class Product
                 $order->setProduct(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

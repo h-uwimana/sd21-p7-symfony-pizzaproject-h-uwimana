@@ -29,7 +29,7 @@ class User
 
     #[ORM\ManyToOne(inversedBy: 'user')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?adres $adres = null;
+    private ?Adres $adres = null;
 
     #[ORM\ManyToMany(targetEntity: Product::class, mappedBy: 'food_order')]
     private Collection $products;

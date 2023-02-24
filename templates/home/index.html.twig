@@ -11,7 +11,12 @@
 <div class="example-wrapper">
     <h1 class="text-xl-left">Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
+    {% for p in products %}
+        <h4>
+            {{ p.name }}
+        </h4>
+        <img src="img/{{ p.picture }}" alt="je moer">
+    {% endfor %}
     <ul>
         <li>Your controller at <code><a href="{{ '/Users/husimana/Documents/sopranos/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
         <li>Your template at <code><a href="{{ '/Users/husimana/Documents/sopranos/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
