@@ -2,19 +2,38 @@
 
 {% block title %}Home{% endblock %}
 
+{% set num = 1 %}
 {% block body %}
 
-    <div class=" mt-5 pt-5 d-flex justify-content-center">
-        <div class=" w-50 row row-cols-3 gab-3">
+    <div class="  d-flex justify-content-center">
+        <div class=" pt-5 px-5 container-lg row row-cols-sm-1 row-cols-md-1 row-cols-lg-3 ">
+            {% set num = 1 %}
             {% for p in products  %}
-                <div class="card rounded-5 m-3 text-center" style="width: 18rem; background: #F6DEFF;">
-                    <img src="img/{{ p.picture }}" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title ">&euro;{{ p.price }}</h5>
-                        <p id="card-text" class="card-text text-wrap">{{ p.details }}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+                <div id="card_{{ num }}" class="col">
+                    <div class="text-center rounded-4 mb-5  border-start border-end d-flex flex-column align-items-center align-items-xl-center">
+                        <div class="">
+                            <img id="img" class="w-50" src="img/{{ p.picture }}" alt=""></div>
+                        <div class="px-3">
+                            <h4 class="mt-2 ">{{ p.name }}</h4>
+                            <p class="w-100 ">{{ p.details }}</p>
+                            <form action="#card_{{ num }} " method="post">
+                                <select class="" name="cars" id="cars">
+                                    <option value="25">25cm</option>
+                                    <option value="35">35cm</option>
+                                    <option value="calzone">calzone</option>
+                                </select>
+                                <br>
+                                <input id="submitBtn"  class="btn  mt-2 " type="submit" value="Toevoegen">
+                            </form>
+
+
+
+                        </div>
                     </div>
                 </div>
+                {% set num = num + 1 %}
             {% endfor %}
         </div>
 
