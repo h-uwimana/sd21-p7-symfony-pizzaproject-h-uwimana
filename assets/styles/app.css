@@ -3,7 +3,7 @@ body {
 }
 
 nav{
-    background: #FFF7E2 !important;
+    background:#171D29 !important;
 }
 #brand{
     width: 30rem;
@@ -11,8 +11,6 @@ nav{
 
 #footer{
     background:#171D29 !important;
-    width: 100%;
-    height: 30rem;
 
 }
 
@@ -30,3 +28,35 @@ nav{
     background: #171D29 !important;
     color: WHITE;
 }
+
+#categoryText{
+    position: relative;
+    display : inline-block;
+}
+
+#categoryText::after {
+    margin: 0 auto;
+    width: 50%;
+    position: absolute;
+    background-color: black;
+    content: '';
+    height: 3px;
+    bottom: -7px;
+    left: 0;
+    right: 0;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+
+}
+
+#categoryText:hover:after{
+    width: 100%;
+    background-color: #dc3545;
+}
+#categoryText:hover{
+    color: #dc3545;
+}
+

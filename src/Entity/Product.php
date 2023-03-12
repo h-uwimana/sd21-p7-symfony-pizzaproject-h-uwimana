@@ -6,6 +6,7 @@ use App\Repository\ProductRepository;
 use App\Entity\Order;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
@@ -35,8 +36,16 @@ class Product
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: Order::class)]
     private Collection $orders;
 
-    #[ORM\Column]
-    private ?float $price = null;
+
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
+    private ?string $small = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
+    private ?string $medium = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
+    private ?string $large = null;
 
     public function __construct()
     {
@@ -151,14 +160,39 @@ class Product
         return $this;
     }
 
-    public function getPrice(): ?float
+
+    public function getSmall(): ?string
     {
-        return $this->price;
+        return $this->small;
     }
 
-    public function setPrice(float $price): self
+    public function setSmall(string $small): self
     {
-        $this->price = $price;
+        $this->small = $small;
+
+        return $this;
+    }
+
+    public function getMedium(): ?string
+    {
+        return $this->medium;
+    }
+
+    public function setMedium(string $medium): self
+    {
+        $this->medium = $medium;
+
+        return $this;
+    }
+
+    public function getLarge(): ?string
+    {
+        return $this->large;
+    }
+
+    public function setLarge(string $large): self
+    {
+        $this->large = $large;
 
         return $this;
     }

@@ -5,10 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55142508-8fea-4ef5-a529-18dc4e9f6fd6" name="Changes" comment="adding entity's and controllers">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f9cc5a79-afcf-41c5-93a0-2a27c95f687a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f9cc5a79-afcf-41c5-93a0-2a27c95f687a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documenten/figma/img/2348-230x173.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documenten/figma/img/2668-197x212-1-197x212.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documenten/figma/img/5286.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documenten/figma/img/Background-copy2-308x308-1-308x308.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documenten/figma/img/Layer-1زلبات-87x213.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documenten/figma/img/Levels-1-222x229-1-222x229.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documenten/figma/img/bowl-of-mexican-salsa-sauce-JNVRCYP-255x252.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/veggie/4_cheese-8058.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/veggie/Californian-8043.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/veggie/Margherita-8046.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/veggie/Zwarte_Truffel-6916-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/veggie/Zwarte_Truffel-6916.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/vis/Tuna-treat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/card.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/card.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/card.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +217,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -221,7 +240,14 @@
       <workItem from="1677245232942" duration="6697000" />
       <workItem from="1677256726697" duration="4355000" />
       <workItem from="1678112860976" duration="1787000" />
-      <workItem from="1678120579935" duration="17475000" />
+      <workItem from="1678120579935" duration="18154000" />
+      <workItem from="1678271870586" duration="4000" />
+      <workItem from="1678273706376" duration="873000" />
+      <workItem from="1678372498849" duration="1830000" />
+      <workItem from="1678460212680" duration="131000" />
+      <workItem from="1678460354346" duration="768000" />
+      <workItem from="1678518933064" duration="35072000" />
+      <workItem from="1678614357605" duration="5443000" />
     </task>
     <task id="LOCAL-00001" summary="adding entity's and controllers">
       <created>1677156113977</created>

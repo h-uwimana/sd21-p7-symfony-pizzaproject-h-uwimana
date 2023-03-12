@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Sopranos | {% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -17,25 +18,35 @@
     </head>
     <body>
     {% block nav %}
-        <nav class="  navbar navbar-expand-lg sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand " href="/"><img  class="ms-4 mt-4 " id="brand" src="img/brand/brand.svg" alt="">
+        <nav class="  navbar navbar-expand-lg sticky-top navbar-dark">
+            <div class="container-fluid ">
+                <a class="navbar-brand " href="/"><img  class="ms-4 mt-4 " id="brand" src="/img/brand/brand-white.svg" alt="">
                 </a>
-                <button class=" m-4 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class=" m-4 navbar-toggler mt-3 pt-3 text-white " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
                 </button>
 
-                    <div class="justify-content-end   me-4 collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="  navbar-nav ms-4 me-4 mb-2 mb-lg-0">
+                    <div class="justify-content-end mt-3 pt-3    me-4 collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul class="   navbar-nav ms-4 me-4 mb-2 mb-lg-0">
+                            <li class="nav-item me-lg-2 mt-md-4 mt-lg-0">
+                                <button type="button" class="btn btn-light position-relative">
+                                    <i class="bi bi-cart4"></i>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                99+
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                                </button>
+                            </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-bold active" aria-current="page" href="/">Home</a>
+                                <a class="nav-link text-white fw-bold active" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link fw-bold active" href="/contact" >
+                                <a class="nav-link text-white fw-bold active" href="/contact" >
                                     Contact
                                 </a>
                             <li class="nav-item">
-                                <a class="nav-link fw-bold active" href="/login">Login</a>
+                                <a class="nav-link text-white fw-bold active" href="/login">Login</a>
                             </li>
                         </ul>
                     </div>
@@ -59,12 +70,92 @@
 
 <footer class="">
     {% block footer %}
-    <div id="footer" class=" p-5  ">
-        <div class="ms-md-5">
-            <img id="brand" class="mt-5" src="img/brand/brand-white.svg" alt="">
+    <div id="footer" class="   ">
+{#        <div class="">#}
+{#            <img id="brand" class="mt-5" src="/img/brand/brand-white.svg" alt="">#}
+{#        </div>#}
+        <div class="row mx-auto d-flex justify-content-center ">
+
+
+            <div class="col-3 text-white my-5 ">
+                <p class="p-0 m-2"><strong>Over Sopranos</strong></p>
+                <ul id="footerUl" class="p-0" style="
+                    list-style: none;
+                ">
+                    <li class="nav-item d-flex">
+                        <i class="me-2">
+                            <svg width="14" height="19" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.0607 13.0607C13.6464 12.4749 13.6464 11.5251 13.0607 10.9393L3.51472 1.3934C2.92893 0.807612 1.97918 0.807612 1.3934 1.3934C0.807612 1.97918 0.807612 2.92893 1.3934 3.51472L9.87868 12L1.3934 20.4853C0.807612 21.0711 0.807612 22.0208 1.3934 22.6066C1.97918 23.1924 2.92893 23.1924 3.51472 22.6066L13.0607 13.0607ZM10 13.5H12V10.5H10V13.5Z" fill="#FF0000"></path>
+                            </svg>
+                        </i>
+
+                        <a class="nav-link active  text-light " href="/about/">Wie is Sopranos</a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <i class="me-2">
+                            <svg width="14" height="19" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.0607 13.0607C13.6464 12.4749 13.6464 11.5251 13.0607 10.9393L3.51472 1.3934C2.92893 0.807612 1.97918 0.807612 1.3934 1.3934C0.807612 1.97918 0.807612 2.92893 1.3934 3.51472L9.87868 12L1.3934 20.4853C0.807612 21.0711 0.807612 22.0208 1.3934 22.6066C1.97918 23.1924 2.92893 23.1924 3.51472 22.6066L13.0607 13.0607ZM10 13.5H12V10.5H10V13.5Z" fill="#FF0000"></path>
+                            </svg>
+                        </i>
+                        <a class="nav-link active  text-light">Veel gestelde vragen</a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <i class="me-2">
+                            <svg width="14" height="19" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.0607 13.0607C13.6464 12.4749 13.6464 11.5251 13.0607 10.9393L3.51472 1.3934C2.92893 0.807612 1.97918 0.807612 1.3934 1.3934C0.807612 1.97918 0.807612 2.92893 1.3934 3.51472L9.87868 12L1.3934 20.4853C0.807612 21.0711 0.807612 22.0208 1.3934 22.6066C1.97918 23.1924 2.92893 23.1924 3.51472 22.6066L13.0607 13.0607ZM10 13.5H12V10.5H10V13.5Z" fill="#FF0000"></path>
+                            </svg>
+                        </i>
+                        <a class="nav-link active  text-light ">Privacy- en cookie beleid</a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <i class="me-2">
+                            <svg width="14" height="19" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.0607 13.0607C13.6464 12.4749 13.6464 11.5251 13.0607 10.9393L3.51472 1.3934C2.92893 0.807612 1.97918 0.807612 1.3934 1.3934C0.807612 1.97918 0.807612 2.92893 1.3934 3.51472L9.87868 12L1.3934 20.4853C0.807612 21.0711 0.807612 22.0208 1.3934 22.6066C1.97918 23.1924 2.92893 23.1924 3.51472 22.6066L13.0607 13.0607ZM10 13.5H12V10.5H10V13.5Z" fill="#FF0000"></path>
+                            </svg>
+                        </i>
+                        <a class="nav-link active  text-light ">Privacy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-2 text-white my-5 ">
+                <p class="p-0 m-0"><strong>Contact</strong></p>
+                <ul id="footerUl" class="p-0" style="
+                    list-style: none;
+                ">
+                    <li class="nav-item d-flex">
+                        <i class="me-2">
+                            <svg width="14" height="19" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.0607 13.0607C13.6464 12.4749 13.6464 11.5251 13.0607 10.9393L3.51472 1.3934C2.92893 0.807612 1.97918 0.807612 1.3934 1.3934C0.807612 1.97918 0.807612 2.92893 1.3934 3.51472L9.87868 12L1.3934 20.4853C0.807612 21.0711 0.807612 22.0208 1.3934 22.6066C1.97918 23.1924 2.92893 23.1924 3.51472 22.6066L13.0607 13.0607ZM10 13.5H12V10.5H10V13.5Z" fill="#FF0000"></path>
+                            </svg>
+                        </i>
+
+                        <a class="nav-link active  text-light " href="/contact/#contact">Direct contact</a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <i class="me-2">
+                            <svg width="14" height="19" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.0607 13.0607C13.6464 12.4749 13.6464 11.5251 13.0607 10.9393L3.51472 1.3934C2.92893 0.807612 1.97918 0.807612 1.3934 1.3934C0.807612 1.97918 0.807612 2.92893 1.3934 3.51472L9.87868 12L1.3934 20.4853C0.807612 21.0711 0.807612 22.0208 1.3934 22.6066C1.97918 23.1924 2.92893 23.1924 3.51472 22.6066L13.0607 13.0607ZM10 13.5H12V10.5H10V13.5Z" fill="#FF0000"></path>
+                            </svg>
+                        </i>
+                        <a class="nav-link active  text-light">Klachten melden</a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <i class="me-2">
+                            <svg width="14" height="19" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.0607 13.0607C13.6464 12.4749 13.6464 11.5251 13.0607 10.9393L3.51472 1.3934C2.92893 0.807612 1.97918 0.807612 1.3934 1.3934C0.807612 1.97918 0.807612 2.92893 1.3934 3.51472L9.87868 12L1.3934 20.4853C0.807612 21.0711 0.807612 22.0208 1.3934 22.6066C1.97918 23.1924 2.92893 23.1924 3.51472 22.6066L13.0607 13.0607ZM10 13.5H12V10.5H10V13.5Z" fill="#FF0000"></path>
+                            </svg>
+                        </i>
+                        <a class="nav-link active  text-light ">Werken bij Sopranos</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </div>
-    {% endblock %}
 </footer>
+    <div class="bg-light text-center d-flex justify-content-center  ">
+        <a class="nav-link m-0 px-0 active text-dark fw-bold  " href="https://github.com/h-uwimana"> Hussein Uwimana</a>
+    </div>
+    {% endblock %}
+
 </html>
