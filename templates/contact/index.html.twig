@@ -1,22 +1,100 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-    {% block stylesheets %}
-        {{ encore_entry_link_tags('app') }}
-    {% endblock %}
-<div class="example-wrapper">
-    <h1 class="text-white">Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/husimana/Documents/sopranos/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/husimana/Documents/sopranos/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="container-sm mt-5">
+        <div class="row">
+
+            <div class=" col mx-5">
+                <p class="fw-bold fs-4">
+                    Bij Sopranos Pizzeria staat pizza centraal en zijn we gepassioneerd over het bereiden van heerlijke pizza's volgens traditionele recepten. Al onze pizza's worden gebakken in onze speciale steenoven, waardoor ze die onmiskenbare krokante korst en smeltende kaaslaag krijgen. Ons menu biedt een uitgebreid assortiment aan smaken, van klassieke toppings zoals pepperoni en mozzarella tot innovatieve combinaties zoals gegrilde groenten en feta.
+                    <br>
+                    <br>
+
+                    Of u nu besluit om online te bestellen of ons restaurant, gelegen op een centrale locatie in de stad, te bezoeken, wij streven ernaar om u een hoogwaardige en authentieke pizzabeleving te bieden. Bij Sopranos Pizzeria zijn we trots op onze pizza's en geloven we dat ze iets speciaals zijn, gemaakt met liefde en zorgvuldigheid. Ons vriendelijke team, dat bekend staat om hun uitstekende service, staat altijd klaar om u te helpen met eventuele vragen of bestellingen.
+                    <br>
+                    <br>
+                    Kom bij ons langs en proef het verschil van onze heerlijke pizza's bij Sopranos Pizzeria!
+                </p>
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+        <div class=" w-100 mt-5 ">
+            <div class="col-12 row d-lg-flex ps-5 mb-3">
+                <div class="col-12  col-lg-4 align-self-center me-3 pb-lg-4 text-center   mt-5 ">
+                    <p class="fs-3">
+                        Tinwerf 16, 2544 ED Den Haag
+                    </p>
+                    <p class="fs-3">
+                        088 666 3600
+                    </p>
+
+                </div>
+
+                <div class="col-12 d-lg-flex align-items-lg-center justify-content-center col-lg-7  img-fluid">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.9404127997245!2d4&#10;                    .247919915900072!3d52.04439817972689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13&#10;                    .1!3m3!1m2!1s0x47c5b1965f4ab57f%3A0x4dc09578063ad6d3!2sROC%20Mondriaan%20School%20voor%20ICT!5e0&#10;                    !3m2!1snl!2snl!4v1669562472471!5m2!1snl!2snl" style="border:0; width:
+                    100%; height:20rem;" <="" div="">
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!--            &lt;div class="col-12 d-flex mt-5  mb-3"&gt;--&gt;
+
+                    &lt;!--                &lt;div class="col ms-5 align-self-center me-2 mt-5 text-center" &gt;--&gt;
+                    &lt;p class="fs-3"&gt;
+                    Tinwerf 16, 2544 ED Den Haag
+                    &lt;/p&gt;
+                    &lt;p class="fs-3"&gt;
+                    088 666 3600
+                    &lt;/p&gt;
+                    &lt;!--                &lt;/div&gt;--&gt;
+                    &lt;!--                &lt;div class="col-7 ms-3 me-3  "&gt;--&gt;
+                    &lt;!--                    &lt;iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.9404127997245!2d4--&gt;
+                    &lt;!--                    .247919915900072!3d52.04439817972689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13--&gt;
+                    &lt;!--                    .1!3m3!1m2!1s0x47c5b1965f4ab57f%3A0x4dc09578063ad6d3!2sROC%20Mondriaan%20School%20voor%20ICT!5e0--&gt;
+                    &lt;!--                    !3m2!1snl!2snl!4v1669562472471!5m2!1snl!2snl" style="border:0; width:--&gt;
+                    &lt;!--                    100%; height:20rem;"--&gt;
+                    &lt;!--                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"&gt;</iframe>--&gt;
+                    <!--                </div>-->
+                    <!--            </div>-->
+
+                </div>
+
+                <section id="contact" class="mt-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center mb-4">
+                                <h2 class="text-uppercase section-heading">Contact </h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="contactForm" name="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3"><input class="form-control" type="text" id="name" placeholder="Uw Volledige naam" name="name" required=""><small class="form-text text-danger flex-grow-1 lead"></small></div>
+                                            <div class="form-group mb-3"><input class="form-control" type="email" id="email" placeholder="Uw Email" name="mail" required=""><small class="form-text text-danger lead"></small></div>
+                                            <div class="form-group mb-3"><input class="form-control" type="tel" placeholder="Uw telefoonnummer" name="phone" required=""><small class="form-text text-danger lead"></small></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3"><textarea class="form-control " id="message" placeholder="Uw Bericht" name="text" required="" style="height: 9rem"></textarea><small class="form-text text-danger lead"></small></div>
+                                        </div>
+                                        <div class="w-100"></div>
+                                        <div class="col-lg-12 text-center">
+                                            <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" name="submit" type="submit">Verstuur</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
