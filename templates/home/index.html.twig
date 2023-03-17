@@ -44,13 +44,16 @@
                         <div class="px-3">
                             <h4 class="mt-2 ">{{ p.name }} </h4>
                             <p class="w-100 ">{{ p.details }}</p>
-                            <form action="#card_{{ num }} " method="post">
-                                <select class="" name="cars" id="cars">
+{#                            {{ form_start(form) }}#}
+{#                            {{ form_end(form) }}#}
+                            <form action="/addCart/" method="post" >
+                                <select class="" name="size" id="cars">
                                     <option value="large">35cm | &euro;{{ p.large }}</option>
                                     <option value="medium">25cm | &euro;{{ p.medium }}</option>
                                     <option value="calzone">calzone | &euro;{{ p.small }}</option>
                                 </select>
                                 <br>
+                                <input id="submitBtn"  class="btn  mt-2 " type="hidden" name="id"  value="{{ p.id }}" >
                                 <input id="submitBtn"  class="btn  mt-2 " type="submit" value="Toevoegen">
                             </form>
                         </div>
