@@ -29,14 +29,37 @@
                     <div class="justify-content-end mt-3 pt-3    me-4 collapse navbar-collapse" id="navbarSupportedContent">
 
                         <ul class="   navbar-nav ms-4 me-4 mb-2 mb-lg-0">
-                            <li class="nav-item me-lg-2 mt-md-4 mt-lg-0">
-                                <button type="button" class="btn btn-light position-relative">
+                            <li class="nav-item dropdown me-lg-2 mt-md-4 mt-lg-0">
+                                <button type="button" class="btn btn-light position-relative dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-cart4"></i>
+                                    {% set aantal = 0 %}
+                                    {% for message in app.session.all() %}
+
+                                        {% set aantal = aantal + 1 %}
+
+
+                                    {% endfor %}
+                                    {% if aantal > 0  %}
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                99+
-                                <span class="visually-hidden">unread messages</span>
+
+
+                                        {{ aantal }}
+
                             </span>
+                                    {% endif %}
                                 </button>
+                                {% if aantal %}
+                                <ul class="dropdown-menu  pb-0">
+                                    {% for product in app.session.all() %}
+                                        {% set price = product["price"] * product["amount"] %}
+
+                                        <li class="dropdown-item">{{ product["amount"] }} || {{ product["name"] }} {{ product["size"] }} || &euro;{{ price |number_format(2) }}</li>
+
+                                    {% endfor %}
+
+                                    <li class="text-center "><a id="afrekenen" class="dropdown-item fw-bold text-white rounded-bottom-1" href="/shoppingCart ">Winkelwagen <i class="bi bi-arrow-right-short"></i></a></li>
+                                </ul>
+                                {% endif %}
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white fw-bold active" aria-current="page" href="/">Home</a>

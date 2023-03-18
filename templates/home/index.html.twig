@@ -47,13 +47,14 @@
 {#                            {{ form_start(form) }}#}
 {#                            {{ form_end(form) }}#}
                             <form action="/addCart/" method="post" >
-                                <select class="" name="size" id="cars">
-                                    <option value="large">35cm | &euro;{{ p.large }}</option>
-                                    <option value="medium">25cm | &euro;{{ p.medium }}</option>
-                                    <option value="calzone">calzone | &euro;{{ p.small }}</option>
+                                <select class="" name="price" id="cars">
+                                    <option value="{{ p.large }}">35cm | &euro;{{ p.large }}</option>
+                                    <option value="{{ p.medium }}">25cm | &euro;{{ p.medium }}</option>
+                                    <option value="{{ p.small }}">calzone | &euro;{{ p.small }}</option>
                                 </select>
                                 <br>
                                 <input id="submitBtn"  class="btn  mt-2 " type="hidden" name="id"  value="{{ p.id }}" >
+                                <input id="submitBtn"  class="btn  mt-2 " type="hidden" name="name"  value="{{ p.name }}" >
                                 <input id="submitBtn"  class="btn  mt-2 " type="submit" value="Toevoegen">
                             </form>
                         </div>
