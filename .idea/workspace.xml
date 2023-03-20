@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55142508-8fea-4ef5-a529-18dc4e9f6fd6" name="Changes" comment="adding entity's and controllers">
-      <change afterPath="$PROJECT_DIR$/src/Controller/AfrekenenController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ShoppingCartController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/afrekenen/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/shopping_cart/index.html.twig" afterDir="false" />
+    <list default="true" id="55142508-8fea-4ef5-a529-18dc4e9f6fd6" name="Changes" comment="adding entity's and controllers for ShoppingCartController.php">
+      <change afterPath="$PROJECT_DIR$/public/img/betaal/apple-pay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/betaal/ideal-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ShoppingCartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ShoppingCartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shopping_cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shopping_cart/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +241,8 @@
       <workItem from="1678518933064" duration="35072000" />
       <workItem from="1678614357605" duration="31038000" />
       <workItem from="1678988570880" duration="1207000" />
-      <workItem from="1679152802511" duration="20713000" />
+      <workItem from="1679152802511" duration="20837000" />
+      <workItem from="1679214273729" duration="16897000" />
     </task>
     <task id="LOCAL-00001" summary="adding entity's and controllers">
       <created>1677156113977</created>
@@ -251,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677156113977</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adding entity's and controllers for ShoppingCartController.php">
+      <created>1679176367176</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679176367176</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +278,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="adding entity's and controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding entity's and controllers" />
+    <MESSAGE value="adding entity's and controllers for ShoppingCartController.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding entity's and controllers for ShoppingCartController.php" />
   </component>
 </project>

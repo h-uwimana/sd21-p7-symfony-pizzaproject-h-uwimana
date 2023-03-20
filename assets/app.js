@@ -10,3 +10,23 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
+
+
+$(document).ready(function () {
+    $("#form").click(function (event) {
+        var formData = {
+            amount: parseInt($("#amount").val()),
+            id: parseInt($("#id").val()),
+        };
+        console.log(formData);
+        $.ajax({
+            url: "/updateCart/",
+            method: "POST",
+            data: formData,
+        }).done(function (data) {
+            console.log(JSON.parse(data) );
+        });
+
+        event.preventDefault();
+    })
+})

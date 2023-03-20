@@ -13,8 +13,14 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class ShoppingCartController extends AbstractController
 {
     #[Route('/shoppingCart', name: 'app_shopping_cart')]
-    public function index(): Response
+    public function index(Request $request): Response
     {
+        $session = $request->getSession();
+        $allSession = $session->all();
+        if(empty($allSession) ){
+            return $this->redirectToRoute("home");
+        }
+
         return $this->render('shopping_cart/index.html.twig', [
             'controller_name' => 'ShoppingCartController',
         ]);
@@ -88,5 +94,26 @@ class ShoppingCartController extends AbstractController
             return new Response("hoi");
         }
 
+    }
+
+
+    #[Route('/updateCart/', name: 'updateCart')]
+    public function updateCart(ValidatorInterface $validator,ManagerRegistry $doctrine,Request $request):Response    {
+
+        $session = $request->getSession();
+
+        $allSession = $session->all();
+//        print_r($allSession);
+        return new Response( json_encode($allSession));
+    }
+
+    #[Route('/removeCart/', name: 'removeCart')]
+    public function removeCart(ValidatorInterface $validator,ManagerRegistry $doctrine,Request $request):Response    {
+
+        $session = $request->getSession();
+
+        $allSession = $session->all();
+
+        return new Response("hoi");
     }
 }
