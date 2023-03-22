@@ -12,13 +12,14 @@
         {% endblock %}
 
         {% block javascripts %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             {{ encore_entry_script_tags('app') }}
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         {% endblock %}
     </head>
     <body>
     {% block nav %}
-        <nav class="  navbar navbar-expand-lg sticky-top navbar-dark">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
             <div class="container-fluid ">
                 <a class="navbar-brand " href="/"><img  class="ms-4 mt-4 " id="brand" src="/img/brand/brand-white.svg" alt="">
                 </a>
@@ -29,14 +30,41 @@
                     <div class="justify-content-end mt-3 pt-3    me-4 collapse navbar-collapse" id="navbarSupportedContent">
 
                         <ul class="   navbar-nav ms-4 me-4 mb-2 mb-lg-0">
-                            <li class="nav-item me-lg-2 mt-md-4 mt-lg-0">
-                                <button type="button" class="btn btn-light position-relative">
+                            <li class="nav-item dropdown me-lg-2 mt-md-4 mt-lg-0">
+                                <button type="button" class="btn btn-light position-relative dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-cart4"></i>
+                                    {% set aantal = 0 %}
+                                    {% for message in app.session.all() %}
+
+                                        {% set aantal = aantal + 1 %}
+
+
+                                    {% endfor %}
+                                    {% if aantal > 0  %}
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                99+
-                                <span class="visually-hidden">unread messages</span>
+
+
+                                        {{ aantal }}
+
                             </span>
+                                    {% endif %}
                                 </button>
+                                {% if aantal %}
+                                <ul class="dropdown-menu  pb-0">
+                                    {% for product in app.session.all() %}
+                                        {% if product["amount"] is defined %}
+                                        {% set price = product["price"] * product["amount"] %}
+
+                                        <li class="dropdown-item">{{ product["amount"] }} || {{ product["name"] }} {{ product["size"] }} || &euro;{{ price |number_format(2) }}</li>
+
+
+                                            {% endif %}
+
+                                    {% endfor %}
+
+                                    <li class="text-center "><a id="afrekenen" class="dropdown-item fw-bold text-white rounded-bottom-1" href="/shoppingCart ">Winkelwagen <i class="bi bi-arrow-right-short"></i></a></li>
+                                </ul>
+                                {% endif %}
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white fw-bold active" aria-current="page" href="/">Home</a>

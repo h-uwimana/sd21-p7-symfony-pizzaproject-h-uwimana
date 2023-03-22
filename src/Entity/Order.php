@@ -17,58 +17,73 @@ class Order
 
     #[ORM\ManyToOne(inversedBy: 'orders')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $user = null;
+    private ?Product $product = null;
 
     #[ORM\ManyToOne(inversedBy: 'orders')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?product $product = null;
+    private ?Bestelling $bestelling = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
+    #[ORM\Column]
+    private ?int $amount = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
+    private ?string $price = null;
 
     #[ORM\Column(length: 255)]
     private ?string $size = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
-    private ?string $price = null;
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $date = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUser(): ?user
-    {
-        return $this->user;
-    }
-
-    public function setUser(?user $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    public function getProduct(): ?product
+    public function getProduct(): ?Product
     {
         return $this->product;
     }
 
-    public function setProduct(?product $product): self
+    public function setProduct(?Product $product): self
     {
         $this->product = $product;
 
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getBestelling(): ?Bestelling
     {
-        return $this->date;
+        return $this->bestelling;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setBestelling(?Bestelling $bestelling): self
     {
-        $this->date = $date;
+        $this->bestelling = $bestelling;
+
+        return $this;
+    }
+
+    public function getAmount(): ?int
+    {
+        return $this->amount;
+    }
+
+    public function setAmount(int $amount): self
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(string $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
@@ -85,14 +100,14 @@ class Order
         return $this;
     }
 
-    public function getPrice(): ?string
+    public function getDate(): ?\DateTimeInterface
     {
-        return $this->price;
+        return $this->date;
     }
 
-    public function setPrice(string $price): self
+    public function setDate(\DateTimeInterface $date): self
     {
-        $this->price = $price;
+        $this->date = $date;
 
         return $this;
     }

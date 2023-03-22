@@ -30,14 +30,6 @@ class Product
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'products')]
-    private Collection $food_order;
-
-    #[ORM\OneToMany(mappedBy: 'product', targetEntity: Order::class)]
-    private Collection $orders;
-
-
-
     #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
     private ?string $small = null;
 
@@ -47,9 +39,11 @@ class Product
     #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
     private ?string $large = null;
 
+    #[ORM\OneToMany(mappedBy: 'product', targetEntity: Order::class)]
+    private Collection $orders;
+
     public function __construct()
     {
-        $this->food_order = new ArrayCollection();
         $this->orders = new ArrayCollection();
     }
 
@@ -106,61 +100,6 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection<int, user>
-     */
-    public function getFoodOrder(): Collection
-    {
-        return $this->food_order;
-    }
-
-    public function addFoodOrder(user $foodOrder): self
-    {
-        if (!$this->food_order->contains($foodOrder)) {
-            $this->food_order->add($foodOrder);
-        }
-
-        return $this;
-    }
-
-    public function removeFoodOrder(user $foodOrder): self
-    {
-        $this->food_order->removeElement($foodOrder);
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Order>
-     */
-    public function getOrders(): Collection
-    {
-        return $this->orders;
-    }
-
-    public function addOrder(Order $order): self
-    {
-        if (!$this->orders->contains($order)) {
-            $this->orders->add($order);
-            $order->setProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOrder(Order $order): self
-    {
-        if ($this->orders->removeElement($order)) {
-            // set the owning side to null (unless already changed)
-            if ($order->getProduct() === $this) {
-                $order->setProduct(null);
-            }
-        }
-
-        return $this;
-    }
-
-
     public function getSmall(): ?string
     {
         return $this->small;
@@ -196,4 +135,48 @@ class Product
 
         return $this;
     }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Order>
+     */
+    public function getOrders(): Collection
+    {
+        return $this->orders;
+    }
+
+    public function addOrder(Order $order): self
+    {
+        if (!$this->orders->contains($order)) {
+            $this->orders->add($order);
+            $order->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrder(Order $order): self
+    {
+        if ($this->orders->removeElement($order)) {
+            // set the owning side to null (unless already changed)
+            if ($order->getProduct() === $this) {
+                $order->setProduct(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }

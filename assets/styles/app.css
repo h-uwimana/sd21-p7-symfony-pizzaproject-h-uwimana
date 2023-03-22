@@ -2,6 +2,8 @@ body {
     background-color: #FFF7E2 !important;
 }
 
+
+
 nav{
     background:#171D29 !important;
 }
@@ -60,3 +62,8 @@ nav{
     color: #dc3545;
 }
 
+#afrekenen{
+    background-color: #171D29 !important;
+}
+#blauw{
+    background-color: #171D29 !important;}

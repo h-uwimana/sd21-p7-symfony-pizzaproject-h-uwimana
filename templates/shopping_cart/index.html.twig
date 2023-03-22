@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ShoppingCartController!{% endblock %}
+
+{% block body %}
+    <section class="h-100 gradient-custom my-5">
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center ">
+                <div class="col-md-8">
+                    <div class="card mb-4 ">
+                        <div id="afrekenen"  class="card-header py-3">
+                            <h5 class="mb-0 text-white">Winkelwagen</h5>
+                        </div>
+                        <div class="card-body ">
+                            <!-- Single item -->
+                            {% set totalPriceAllProducts = 0 %}
+                            {% for product in app.session.all() %}
+                                {% if product["amount"] is defined %}
+
+                                {% set totalPriceProduct = product["amount"] * product["price"]  %}
+                                {% set totalPriceAllProducts = totalPriceAllProducts + totalPriceProduct  %}
+                                {% set price = product["price"] * product["amount"] %}
+
+                            <div id="form" class="row mb-3">
+                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                    <!-- Image -->
+                                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                                        <img src="/img/{{ product["image"] }}"
+                                             class="w-100" alt="Blue Jeans Jacket" />
+                                        <a href="#!">
+                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                        </a>
+                                    </div>
+                                    <!-- Image -->
+                                </div>
+
+                                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                    <!-- Data -->
+                                    <p><strong>{{ product["name"] }}</strong></p>
+                                    <p >size: {{ product["size"] }}</p>
+                                    <button id="remove" type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
+                                            title="Move to the wish list">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                    <!-- Data -->
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                    <!-- Quantity -->
+                                    <div class="d-flex mb-4 mt-4" >
+                                        <button id="min" class="btn btn-primary btn-dark me-2 mb-5"onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                            <i class="bi bi-dash"></i>
+                                        </button>
+
+                                        <div class="form-outline">
+                                            <input id="amount" min="0" name="quantity" value="{{ product["amount"] }}" type="number" class="form-control" />
+                                            <label class="form-label" for="form1">aantal</label>
+                                            <input id="id"  class="btn  mt-2 " type="hidden" name="id"  value="{{ product["id"] }}" >
+                                            <input id="size"  class="btn  mt-2 " type="hidden" name="size"  value="{{ product["size"] }}" >
+                                            <input id="name"  class="btn  mt-2 " type="hidden" name="name"  value="{{ product["name"] }}" >
+                                            <input id="price"  class="btn  mt-2 " type="hidden" name="price"  value="{{ product["price"] }}" >
+                                            <input id="image"  class="btn  mt-2 " type="hidden" name="image"  value="{{ product["image"] }}" >
+
+                                        </div>
+
+                                        <button  id="plus" class="btn btn-dark  ms-2 mb-5"  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                            <i class="bi bi-plus-lg"></i>
+                                        </button>
+                                    </div>
+                                    <!-- Quantity -->
+
+                                    <!-- Price -->
+                                    <p class="text-start text-md-center">
+
+                                        <strong>&euro;{{ price|number_format(2) }}</strong>
+                                    </p>
+                                    <!-- Price -->
+                                </div>
+                            </div>
+                                <hr class="my-4" />
+                                {% endif %}
+                            {% endfor %}
+                            <!-- Single item -->
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div id="afrekenen" class="card-header py-3">
+                            <h5 class="mb-0 text-white">Verwachte aankomsttijd </h5>
+                        </div>
+                        <div  class="card-body">
+                            <p class="mb-0 fw-bold">ca 50 min.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-4 mb-lg-0">
+                        <div id="afrekenen" class="card-header py-3">
+                            <h5 class="mb-0 text-white">Wij Accepten</h5>
+                        </div>
+                        <div class="card-body">
+                            <img class="me-2" width="45px"
+                                 src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                                 alt="Visa" />
+                            <img class="me-2" width="45px"
+                                 src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                                 alt="American Express" />
+                            <img class="me-2" width="45px"
+                                 src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                                 alt="Mastercard" />
+                            <img class="me-2" width="45px"
+                                 src="img/betaal/ideal-logo.png"
+                                 alt="Mastercard" />
+                            <img class="me-2" width="50px"
+                                 src="img/betaal/apple-pay.png"
+                                 alt="Mastercard" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div id="afrekenen" class="card-header py-3">
+                            <h5 class="mb-0 text-white">Totaal</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li
+                                        class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    Pizza
+                                    <span>&euro;{{ totalPriceAllProducts|number_format(2) }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    Bezorgkosten
+                                    <span> Gratis</span>
+                                </li>
+                                <li
+                                        class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                    <div>
+                                        <strong>Totaal</strong>
+                                        <strong>
+                                            <p class="mb-0">(incl btw)</p>
+                                        </strong>
+                                    </div>
+                                    <span><strong>&euro;{{ totalPriceAllProducts|number_format(2) }}</strong></span>
+                                </li>
+                            </ul>
+
+                            <button  id="afrekenen" type="button" class="btn btn-dark btn-lg btn-block">
+                               <a class="page-link" href="/checkout">Afrekenen</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
