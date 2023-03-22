@@ -15,12 +15,13 @@
                             <!-- Single item -->
                             {% set totalPriceAllProducts = 0 %}
                             {% for product in app.session.all() %}
+                                {% if product["amount"] is defined %}
 
                                 {% set totalPriceProduct = product["amount"] * product["price"]  %}
                                 {% set totalPriceAllProducts = totalPriceAllProducts + totalPriceProduct  %}
                                 {% set price = product["price"] * product["amount"] %}
 
-                            <div class="row mb-3">
+                            <div id="form" class="row mb-3">
                                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                     <!-- Image -->
                                     <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
@@ -36,8 +37,8 @@
                                 <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                     <!-- Data -->
                                     <p><strong>{{ product["name"] }}</strong></p>
-                                    <p>Size: {{ product["size"] }}</p>
-                                    <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
+                                    <p >size: {{ product["size"] }}</p>
+                                    <button id="remove" type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
                                             title="Move to the wish list">
                                         <i class="bi bi-trash3"></i>
                                     </button>
@@ -46,8 +47,8 @@
 
                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                     <!-- Quantity -->
-                                    <form id="form" class="d-flex mb-4 mt-4" >
-                                        <button id="min" class="btn btn-primary btn-dark me-2 mb-5">
+                                    <div class="d-flex mb-4 mt-4" >
+                                        <button id="min" class="btn btn-primary btn-dark me-2 mb-5"onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                             <i class="bi bi-dash"></i>
                                         </button>
 
@@ -55,12 +56,17 @@
                                             <input id="amount" min="0" name="quantity" value="{{ product["amount"] }}" type="number" class="form-control" />
                                             <label class="form-label" for="form1">aantal</label>
                                             <input id="id"  class="btn  mt-2 " type="hidden" name="id"  value="{{ product["id"] }}" >
+                                            <input id="size"  class="btn  mt-2 " type="hidden" name="size"  value="{{ product["size"] }}" >
+                                            <input id="name"  class="btn  mt-2 " type="hidden" name="name"  value="{{ product["name"] }}" >
+                                            <input id="price"  class="btn  mt-2 " type="hidden" name="price"  value="{{ product["price"] }}" >
+                                            <input id="image"  class="btn  mt-2 " type="hidden" name="image"  value="{{ product["image"] }}" >
+
                                         </div>
 
-                                        <button type="submit" id="plus" class="btn btn-dark  ms-2 mb-5">
+                                        <button  id="plus" class="btn btn-dark  ms-2 mb-5"  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                             <i class="bi bi-plus-lg"></i>
                                         </button>
-                                    </form>
+                                    </div>
                                     <!-- Quantity -->
 
                                     <!-- Price -->
@@ -72,6 +78,7 @@
                                 </div>
                             </div>
                                 <hr class="my-4" />
+                                {% endif %}
                             {% endfor %}
                             <!-- Single item -->
 
@@ -140,7 +147,7 @@
                                 </li>
                             </ul>
 
-                            <button id="afrekenen" type="button" class="btn btn-dark btn-lg btn-block">
+                            <button  id="afrekenen" type="button" class="btn btn-dark btn-lg btn-block">
                                <a class="page-link" href="/checkout">Afrekenen</a>
                             </button>
                         </div>
@@ -149,4 +156,6 @@
             </div>
         </div>
     </section>
+
 {% endblock %}
+

@@ -19,7 +19,7 @@
     </head>
     <body>
     {% block nav %}
-        <nav class="  navbar navbar-expand-lg sticky-top navbar-dark">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
             <div class="container-fluid ">
                 <a class="navbar-brand " href="/"><img  class="ms-4 mt-4 " id="brand" src="/img/brand/brand-white.svg" alt="">
                 </a>
@@ -52,9 +52,13 @@
                                 {% if aantal %}
                                 <ul class="dropdown-menu  pb-0">
                                     {% for product in app.session.all() %}
+                                        {% if product["amount"] is defined %}
                                         {% set price = product["price"] * product["amount"] %}
 
                                         <li class="dropdown-item">{{ product["amount"] }} || {{ product["name"] }} {{ product["size"] }} || &euro;{{ price |number_format(2) }}</li>
+
+
+                                            {% endif %}
 
                                     {% endfor %}
 

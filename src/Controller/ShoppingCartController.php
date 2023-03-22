@@ -30,12 +30,6 @@ class ShoppingCartController extends AbstractController
     public function addCart(ValidatorInterface $validator,ManagerRegistry $doctrine,Request $request):Response    {
 
         $session = $request->getSession();
-        $allSession = $session->all();
-//        foreach ($allSession as $key => $value){
-//             var_dump($key);
-//
-//        }
-//        return new Response("hoi");
         $price = (float) $request->request->get("price");
         $id = (int) $request->request->get("id");
         $name = $request->request->get("name");
@@ -55,7 +49,7 @@ class ShoppingCartController extends AbstractController
             if(in_array($array,$session->all() )){
                 $array["amount"] = $array["amount"] + 1;
             }
-            $session->set("$name small", $array);
+            $session->set("$id small", $array);
             return $this->redirectToRoute("home");
         }elseif($price === (float)$medium){
             $array = [
@@ -70,7 +64,7 @@ class ShoppingCartController extends AbstractController
             if(in_array($array,$session->all() )){
                 $array["amount"] = $array["amount"] + 1;
             }
-            $session->set("$name medium", $array );
+            $session->set("$id medium", $array );
             return $this->redirectToRoute("home");
         }elseif($price === (float)$large){
 
@@ -87,7 +81,7 @@ class ShoppingCartController extends AbstractController
             }
 
 
-            $session->set("$name large", $array);
+            $session->set("$id large", $array);
 
             return $this->redirectToRoute("home");
         }else{
@@ -100,20 +94,48 @@ class ShoppingCartController extends AbstractController
     #[Route('/updateCart/', name: 'updateCart')]
     public function updateCart(ValidatorInterface $validator,ManagerRegistry $doctrine,Request $request):Response    {
 
-        $session = $request->getSession();
+        $session =  $request->getSession();
+        $id = (int) $request->get("id");
+        $size = (string) $request->get("size");
+        $amount = (int) $request->get("amount");
+        $name = $request->get("name");
+        $price = (float) $request->get("price");
+        $image = $request->get("image");
 
-        $allSession = $session->all();
-//        print_r($allSession);
-        return new Response( json_encode($allSession));
+        $array = [
+            "id" => $id,
+            "name" => $name,
+            "image" => $image,
+            "price" => $price,
+            "size" => $size,
+            "amount" => $amount,
+        ];
+
+        $session->set("$id $size", $array);
+
+
+
+        $product = $session->get("$id $size");
+
+
+
+        $allSession = $session->all();;
+
+        return new Response(json_encode($array));
     }
 
     #[Route('/removeCart/', name: 'removeCart')]
     public function removeCart(ValidatorInterface $validator,ManagerRegistry $doctrine,Request $request):Response    {
 
         $session = $request->getSession();
+        $id = $request->get("id");
+        $size = strval($request->get("size"));
+
+        $session->remove("$id $size");
 
         $allSession = $session->all();
+        dd($allSession);
 
-        return new Response("hoi");
+        return new Response(json_encode($allSession));
     }
 }
