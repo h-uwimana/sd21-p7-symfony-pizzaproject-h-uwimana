@@ -134,7 +134,6 @@ class ShoppingCartController extends AbstractController
         $session->remove("$id $size");
 
         $allSession = $session->all();
-        dd($allSession);
 
         return new Response(json_encode($allSession));
     }

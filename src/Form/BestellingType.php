@@ -4,6 +4,9 @@ namespace App\Form;
 
 use App\Entity\Bestelling;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,10 +17,12 @@ class BestellingType extends AbstractType
         $builder
             ->add('firstName')
             ->add('lastName')
-            ->add('email')
+            ->add('email', EmailType::class)
             ->add('adres')
             ->add('postcode')
-            ->add('phonenumber')
+            ->add('phonenumber', TelType::class)
+            ->add('submit', SubmitType::class, ["label" => "Bestelling plaatsen"])
+            ->getForm()
         ;
     }
 

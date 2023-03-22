@@ -12,14 +12,29 @@ use Symfony\Component\Routing\Annotation\Route;
 class AfrekenenController extends AbstractController
 {
     #[Route('/checkout', name: 'checkout')]
-    public function index(Request $request): Response
+    public function index(Request $request,): Response
     {
         $bestelling = new Bestelling();
 
         $form = $this->createForm(BestellingType::class, $bestelling);
 
+//        dd($form);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // but, the original `$task` variable has also been updated
+            $task = $form->getData();
+
+            dd($task);
+
+            // ... perform some action, such as saving the task to the database
+
+            return $this->redirectToRoute('home');
+        }
+
+
         return $this->render('afrekenen/index.html.twig', [
-            "form" => $form->createView()
+            "form" => $form->createView(),
         ]);
     }
 }

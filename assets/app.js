@@ -45,7 +45,6 @@ $(document).ready(function () {
                 method: "POST",
                 data: formData,
             }).done(function (data) {
-                console.log(JSON.parse(data) );
                 location.reload();
             });
         })
@@ -71,8 +70,6 @@ $(document).ready(function () {
                 method: "POST",
                 data: formData,
             }).done(function (data) {
-                // JSON.parse(data)
-                console.log(JSON.parse(data) );
                 location.reload();
             });
 
@@ -94,8 +91,6 @@ $(document).ready(function () {
                 method: "POST",
                 data: formData,
             }).done(function (data) {
-                // JSON.parse(data)
-                console.log(JSON.parse(data) );
                 location.reload();
             });
 
