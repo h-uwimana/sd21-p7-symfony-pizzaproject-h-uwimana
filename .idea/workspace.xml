@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55142508-8fea-4ef5-a529-18dc4e9f6fd6" name="Changes" comment="adding entity's and controllers for ShoppingCartController.php">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AfrekenenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AfrekenenController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
-    </list>
+    <list default="true" id="55142508-8fea-4ef5-a529-18dc4e9f6fd6" name="Changes" comment="adding entity's and controllers for ShoppingCartController.php" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -256,6 +251,7 @@
       <workItem from="1680094021365" duration="1695000" />
       <workItem from="1680125633513" duration="97000" />
       <workItem from="1680134059288" duration="6050000" />
+      <workItem from="1680169784001" duration="160000" />
     </task>
     <task id="LOCAL-00001" summary="adding entity's and controllers">
       <created>1677156113977</created>
