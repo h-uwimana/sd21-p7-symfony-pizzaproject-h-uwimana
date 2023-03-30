@@ -32,7 +32,8 @@ class Order
     #[ORM\Column(length: 255)]
     private ?string $size = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE )]
+    #[option (default: 'CURRENT_TIMESTAMP')]
     private ?\DateTimeInterface $date = null;
 
     public function getId(): ?int
