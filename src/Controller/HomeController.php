@@ -2,27 +2,56 @@
 
 namespace App\Controller;
 
+
+use App\Entity\Category;
 use App\Entity\Product;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class HomeController extends AbstractController
 {
-    #[Route('/bh', name: 'app_home')]
-    public function index(): Response
+
+
+    #[Route('/', name: "home")]
+    public function show(RequestStack $requestStack ,ValidatorInterface $validator,ManagerRegistry $doctrine,Request $request ):Response
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
+        $session = $request->getSession()->all();
+
+//        dd($request);
+
+        $products=$doctrine->getRepository(Product::class)->findAll();
+        $category=$doctrine->getRepository(Category::class)->findAll();
+
+
+
+       return  $this->render("home/index.html.twig", ["products"=>$products, "category"=>$category,
+           ]);
     }
 
-    #[Route('show')]
-    public function show(ManagerRegistry $doctrine):Response
+
+    #[Route('/category/{id}', name: 'category')]
+    public function getCategory(ValidatorInterface $validator,ManagerRegistry $doctrine,int $id, Request $request):Response
     {
-        $products=$doctrine->getRepository(Product::class)->findAll();
-       return  $this->render("home/index.html.twig", ["products"=>$products,
-            'controller_name' => 'HomeController']);
+
+
+        $products=$doctrine->getRepository(Product::class)->findBy(array("category"=>$id));
+        $category=$doctrine->getRepository(Category::class)->findAll();
+
+
+        return  $this->render("home/index.html.twig", ["products"=>$products, "category"=>$category,
+           ]);
     }
+
+
 }
+
+
+
+
+
+

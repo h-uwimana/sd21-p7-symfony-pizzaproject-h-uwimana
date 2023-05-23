@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container my-5 py-5">
+        <main class="my-5 py-5">
+
+            <div id="afrekenen" class="d-flex justify-content-center g-5 text-white rounded-3 pb-4">
+
+                <div class="col-md-7 col-lg-8 mt-4">
+                    <h4 class="mb-3">Bezorg Adres</h4>
+                    {{ form_start(form) }}
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="lastName" class="form-label">Voornaam</label>
+                                {{ form_widget(form.firstName,{'attr': {'class': 'form-control'}}) }}
+
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.firstName) }}
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="lastName" class="form-label">Achternaam</label>
+                                {{ form_widget(form.lastName,{'attr': {'class': 'form-control'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.lastName) }}
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email </label>
+                                {{ form_widget(form.email,{'attr': {'class': 'form-control'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.email) }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-9">
+                                <label for="address" class="form-label">Woonplaats</label>
+                                {{ form_widget(form.adres,{'attr': {'class': 'form-control'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.adres) }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="address2" class="form-label">Postcode </label>
+                                {{ form_widget(form.postcode,{'attr': {'class': 'form-control'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.postcode) }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label for="address2" class="form-label">Telefoonnummer (optioneel) </label>
+                                {{ form_widget(form.phonenumber,{'attr': {'class': 'form-control'}}) }}
+                                <div class="invalid-feedback">
+                                    {{ form_errors(form.phonenumber) }}
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <hr class="my-4">
+                    {{ form_widget(form.submit,{'attr': {'class': 'w-100 btn btn-primary btn-lg'}}) }}
+
+                    {{ form_end(form) }}
+                </div>
+
+            </div>
+        </main>
+    </div>
+{% endblock %}

@@ -6,6 +6,7 @@ use App\Repository\ProductRepository;
 use App\Entity\Order;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
@@ -29,18 +30,20 @@ class Product
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'products')]
-    private Collection $food_order;
+    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
+    private ?string $small = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
+    private ?string $medium = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2)]
+    private ?string $large = null;
 
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: Order::class)]
     private Collection $orders;
 
-    #[ORM\Column]
-    private ?float $price = null;
-
     public function __construct()
     {
-        $this->food_order = new ArrayCollection();
         $this->orders = new ArrayCollection();
     }
 
@@ -97,26 +100,50 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection<int, user>
-     */
-    public function getFoodOrder(): Collection
+    public function getSmall(): ?string
     {
-        return $this->food_order;
+        return $this->small;
     }
 
-    public function addFoodOrder(user $foodOrder): self
+    public function setSmall(string $small): self
     {
-        if (!$this->food_order->contains($foodOrder)) {
-            $this->food_order->add($foodOrder);
-        }
+        $this->small = $small;
 
         return $this;
     }
 
-    public function removeFoodOrder(user $foodOrder): self
+    public function getMedium(): ?string
     {
-        $this->food_order->removeElement($foodOrder);
+        return $this->medium;
+    }
+
+    public function setMedium(string $medium): self
+    {
+        $this->medium = $medium;
+
+        return $this;
+    }
+
+    public function getLarge(): ?string
+    {
+        return $this->large;
+    }
+
+    public function setLarge(string $large): self
+    {
+        $this->large = $large;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
@@ -151,15 +178,5 @@ class Product
         return $this;
     }
 
-    public function getPrice(): ?float
-    {
-        return $this->price;
-    }
 
-    public function setPrice(float $price): self
-    {
-        $this->price = $price;
-
-        return $this;
-    }
 }

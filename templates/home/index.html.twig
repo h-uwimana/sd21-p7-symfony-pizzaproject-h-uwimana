@@ -1,25 +1,71 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home{% endblock %}
+
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="container-md  mb-5 pb-5 pt-3 h-100">
+        <div class="row h-100">
+            <div class="col-lg col-sm-12 d-grid justify-content-center align-items-center  px-lg-0  mx-md-5 mx-lg-0 vh-75">
+                <p class="fs-4 fw-bold fst-italic px-sm-5 px-lg-0 mx-auto ">
+                    Onze pizza's worden gebakken in een speciale steenoven, waardoor ze hun onmiskenbare krokante korst en heerlijk smeltende kaaslaag krijgen. Of u nu besluit online te bestellen of ons restaurant te bezoeken, wij streven ernaar om u te voorzien van de meest hoogwaardige en authentieke pizza-ervaring.
+                </p>
+            </div>
+            <div class="col-lg col-sm-12 d-grid justify-content-center align-items-center w-100 pt-md-4 ">
+                <img class="img-fluid" src="{{ asset("/img/home/banner.png") }}" alt="">
 
-<div class="example-wrapper">
-    <h1 class="text-xl-left">Hello {{ controller_name }}! ✅</h1>
-
-    {% for p in products %}
-        <h4>
-            {{ p.name }}
-        </h4>
-        <img src="img/{{ p.picture }}" alt="je moer">
-    {% endfor %}
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/husimana/Documents/sopranos/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/husimana/Documents/sopranos/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
+            </div>
+        </div>
+        
+    </div>
+<div id="category"  class="container-md my-3">
+    <div class="  d-flex justify-content-center ">
+        <div class="row">
+            <div class="col">
+                <h1 id="categoryText" class="fw-bold"><a class="nav-link"  href="/#category">Alles</a></h1>
+            </div>
+            {% for c in category %}
+            <div class="col">
+                <h1 id="categoryText" class="fw-bold"><a class="nav-link" href="/category/{{ c.id }}#category">{{ c.name }}</a></h1>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
+<div  class="container-md">
+    <div class="  d-flex justify-content-center">
+        <div class=" pt-5 px-5 container-lg row row-cols-sm-1 row-cols-md-1 row-cols-lg-3  d-flex justify-content-center">
+            {% set num = 1 %}
+            {% for p in products  %}
+                <div id="card_{{ num }}" class="col">
+                    <div class="text-center rounded-4 mb-5  border-start border-danger border-end d-flex flex-column align-items-center align-items-xl-center">
+                        <div class="">
+                            <img id="img" class="w-50" src="/img/{{ p.picture }}" alt="pizza"></div>
+                        <div class="px-3">
+                            <h4 class="mt-2 ">{{ p.name }} </h4>
+                            <p class="w-100 ">{{ p.details }}</p>
+{#                            {{ form_start(form) }}#}
+{#                            {{ form_end(form) }}#}
+                            <form action="/addCart/" method="post" >
+                                <select class="" name="price" id="cars">
+                                    <option value="{{ p.large }}">35cm | &euro;{{ p.large }}</option>
+                                    <option value="{{ p.medium }}">25cm | &euro;{{ p.medium }}</option>
+                                    <option value="{{ p.small }}">calzone | &euro;{{ p.small }}</option>
+                                </select>
+                                <br>
+                                <input id="submitBtn"  class="btn  mt-2 " type="hidden" name="id"  value="{{ p.id }}" >
+                                <input id="submitBtn"  class="btn  mt-2 " type="hidden" name="name"  value="{{ p.name }}" >
+                                <input id="submitBtn"  class="btn  mt-2 " type="submit" value="Toevoegen">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+
 {% endblock %}
